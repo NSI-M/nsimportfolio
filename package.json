@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@nuxt/content": "^3.5.1",
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.13.6",
+    "@sidebase/nuxt-auth": "^0.10.1",
     "nuxt": "^3.17.4",
     "vue": "^3.5.14",
     "vue-router": "^4.5.1"

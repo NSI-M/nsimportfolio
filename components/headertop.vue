@@ -1,6 +1,6 @@
 <template>
         <header class="kielheader">
-            <NuxtLink to="/" class="logocontainer"  target="_self" style="text-decoration: none;">
+            <NuxtLink to="/" class="logocontainer" external  target="_self" style="text-decoration: none;">
                     <img src="@/assets/img/logo.png" class="headlogo">
                     <div class="headertitle">
                         <h2 style="font-family: 'Orbitron';font-weight: 400;">JRS</h2>

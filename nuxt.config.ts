@@ -8,8 +8,48 @@ export default defineNuxtConfig({
   ],
   modules: [
     '@nuxt/image',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@sidebase/nuxt-auth'
   ],
+  runtimeConfig: {
+    public: {
+      authOrigin: process.env.NUXT_PUBLIC_AUTH_ORIGIN,
+      frontendOrigin: process.env.NUXT_PUBLIC_FRONTEND_ORIGIN,
+      apiBase: process.env.API_BASE
+    }
+  },
+  auth: {
+    originEnvKey: 'NUXT_PUBLIC_AUTH_ORIGIN',
+    baseURL: process.env.NUXT_PUBLIC_AUTH_ORIGIN,
+    provider: {
+      type: 'local',
+      token: {
+        signInResponseTokenPointer: 'token',
+        type: 'Bearer'
+      } ,
+      endpoints: {
+        signIn:    { path: '/api/auth/signin',  method: 'post' },
+        signUp:  { path: '/api/auth/signup', method: 'post' },
+        getSession:{ path: '/api/auth/member',   method: 'get'  }  // 旧 user
+      }
+    },
+    pages: {
+      signIn: '/login'
+    },
+    sessionRefresh: {
+      enableOnWindowFocus: true
+    },
+    globalAppMiddleware: false
+  },
+  nitro: {
+    devProxy: {
+      '/api': {
+        target: process.env.NUXT_PUBLIC_AUTH_ORIGIN,
+        changeOrigin: true,
+        cookieDomainRewrite: 'localhost'
+      }
+    }
+  },
   image: {
     domains: [""]
   },
