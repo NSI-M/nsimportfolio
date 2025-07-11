@@ -1,16 +1,29 @@
 <template>
-    <form @submit.prevent="onSignup">
-      <div>
+  <headertop/>
+  <div class="flexboxf">
+    <div class="formimgbox">
+      <img src="@/assets/img/formimage.jpg"/>
+    </div>
+    <form class="formbox" @submit.prevent="onSignup">
+      <div class="">
+        <h2>
+          <span style="font-family: 'Orbitron';">SIGN UP to discover membership information</span>
+        </h2>
+      </div>
+      <div class="formcomp">
         <label>Email</label>
         <input v-model="email" type="email" required />
       </div>
-      <div>
+      <div class="formcomp">
         <label>Password</label>
         <input v-model="password" type="password" required />
       </div>
-      <button type="submit">Sign Up</button>
+      <div class="formcomp">
+        <button type="submit">Sign Up</button>
+      </div>
     </form>
-
+  </div>
+  <footern/>
 </template>
 <script setup lang="ts">
 import { ref } from 'vue'
@@ -26,9 +39,16 @@ const onSignup = async () => {
   try {
     await signup(email.value, password.value)
     alert('登録完了！サインイン画面へ移動します。')
-    router.push('/')
+    router.push('/login')
   } catch (e: any) {
     alert(e.statusMessage || 'サインアップに失敗しました')
   }
 }
+useHead({
+ meta: [
+    {name: 'description', content: 'SIGN UP'},
+    {property: 'og:title', content: 'Collections | Japan Runway Show'},
+ ]
+})
+
 </script>

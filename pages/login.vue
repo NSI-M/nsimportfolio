@@ -1,19 +1,32 @@
 <template>
   <Headertop/>
-  <div class="flexbox">
-    <form @submit.prevent="onSignin">
-      <div>
-        <label>Email</label>
+  <div class="flexboxf">
+    <div class="formimgbox">
+      <img src="@/assets/img/formimage.jpg"/>
+    </div>
+    <form class="formbox" @submit.prevent="onSignin">
+      <div class="">
+        <h2>
+          <span style="font-family: 'Orbitron';">SIGN IN to discover membership information</span>
+        </h2>
+      </div>
+      <div class="formcomp">
+        <label>Email*</label>
         <input v-model="email" type="email" required />
       </div>
-      <div>
-        <label>Password</label>
+      <div class="formcomp">
+        <label>Password*</label>
         <input v-model="password" type="password" required />
       </div>
-      <button type="submit">Sign In</button>
+      <div class="formcomp">
+        <button type="submit">SIGN IN</button>
+      </div>
+      <p class="">
+        ご登録がまだの方：<NuxtLink to="/signup" ><span class="formlink">サインアップ</span></NuxtLink>
+      </p>
     </form>
   </div>
-
+  <footern/>
 </template>
 
 <script setup lang="ts">
@@ -22,11 +35,8 @@ import { useAuth } from '~/composables/useAuth'
 import { useRouter } from 'vue-router'
 
 const email = ref('')
-const mail = ref('')
 const password = ref('')
-const pswd = ref('')
 const { signin } = useAuth()
-const { signup } = useAuth()
 const router = useRouter()
 const errorMessage = ref<string | null>(null)
 const onSignin = async () => {
@@ -41,4 +51,11 @@ const onSignin = async () => {
     console.error('Signin failed:', e)
   }
 }
+useHead({
+ meta: [
+    {name: 'description', content: 'SIGN IN to discover membership information'},
+    {property: 'og:title', content: 'SIGN IN'},
+ ]
+})
+
 </script>

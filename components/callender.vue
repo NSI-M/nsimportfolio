@@ -15,5 +15,8 @@
                 </tr>
             </tbody>
         </table>
+        <authcomp>
+            hogehoge
+        </authcomp>
 
 </template>

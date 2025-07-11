@@ -15,7 +15,7 @@ export const useAuth = () => {
     } catch (e: any) {
       throw createError({
         statusCode: e.response?.status || 500,
-        statusMessage: e.response?._data?.message || 'サインアップに失敗しました'
+        statusMessage: e.response?._data?.message || 'サインアップに失敗しました。メールアドレスを確認してください。'
       })
     }
   }
@@ -28,12 +28,12 @@ export const useAuth = () => {
         body: { email,password }
       })
       tokenCookie.value = data.token
-      console.log('tokenCookie updated:', tokenCookie.value); // ★追加して確認★
+      console.log('tokenCookie updated:', tokenCookie.value); // 
       return data
-    } catch (error: any) { // $fetch は直接エラーをスローするので、try-catchで捕捉
+    } catch (error: any) { 
         throw createError({
           statusCode: error.response?.status || 500,
-          statusMessage: error.response?._data?.message || 'サインインに失敗しました'
+          statusMessage: error.response?._data?.message || 'サインインに失敗しました。メールアドレスとパスワードを確認してください。'
         })
       }
   }

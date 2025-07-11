@@ -170,6 +170,122 @@
     background-color: rgba(102, 186, 183, 0.82);
 }
 
+.flexboxf {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    height: 100vh;
+    align-items: center;
+    margin-bottom: 2vh;
+}
+
+.formlink {
+    text-decoration: underline;
+}
+
+.formimgbox {
+    width: 50%;
+    height: 100vh;
+    
+}
+
+.formimgbox img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+@media screen and (max-width: 1024px) {
+    .formimgbox {
+        width: 0%;
+    }
+}
+
+.formbox {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+    flex-wrap: wrap;
+}
+
+@media screen and (min-width: 1025px) {
+    .formbox {
+        width: 50%;
+        max-height: 100%;
+        padding-left: 2%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .formbox *{
+        margin: 0 auto;
+    }
+}
+
+.formbox h2 {
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 1024px) {
+    .formbox h2 {
+        text-align: center;
+    }
+}
+
+
+.formcomp {
+    width: 100%;
+    margin-top: 10%;
+    display: flex;
+    position: relative;
+    object-fit: contain;
+}
+
+.formcomp label {
+    font-size: 0.8rem;
+    color: rgb(207, 207, 207);
+    width: 25%;
+    font-family: Orbitron;
+}
+
+.formcomp input {
+    font-size: 0.8rem;
+    font-family: Orbitron;
+    border: none;
+    border-bottom: 2px solid rgba(151, 150, 150, 0.2);
+    transition: box-shadow 0.5s ease;
+    color: rgba(192, 192, 192, 1);
+}
+
+.formcomp input:focus {
+    box-shadow: 0 2px 0 0 rgba(196, 196, 196, 0.8);
+    border: none;
+    outline: none;
+}
+
+.formcomp button {
+    font-family: Orbitron;
+    background-color: rgba(0, 0, 0, 0.4);
+    font-size: 0.8rem;
+    width: 25%;
+    height: 1.6rem;
+    box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+
+}
+
+
+@media screen and (max-width: 1024px) {
+    .formcomp button {
+        margin: 0 auto;
+    }
+}
+
+.formcomp button:hover {
+    background-color: rgba(28, 28, 28, 1);
+}
+
 .visual {
     display: flex;
     width: 100vw;

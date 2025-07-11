@@ -1,3 +1,3 @@
-GET  http://192.168.10.82:5000/api/auth/member/
+GET  http://localhost:5000/api/auth/member/
 Content-Type: application/json
 Authorization:  Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwiZW1haWwiOiJ0ZXN0QHRlc3QuY29tIiwiaWF0IjoxNzUxMjE4Nzg2LCJleHAiOjE3NTEyMjIzODZ9.PwJCttTls-dMJ0mm1XN4ktYDBaCWJWfEYCr-k8EhhQY

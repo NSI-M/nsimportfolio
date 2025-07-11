@@ -1,14 +1,49 @@
 // back/index.js
-require('dotenv').config({ path: '.env.dev' })      // ← .env を読み込む
-const express = require('express')
-const cors    = require('cors')
-const sqlite3 = require('sqlite3').verbose()
-const bcrypt  = require('bcrypt')
+//require('dotenv').config({ path: '.env.dev' })      // ← .env を読み込む
+//const express = require('express')
+//const cors    = require('cors')
+//const sqlite3 = require('sqlite3').verbose()
+//const bcrypt  = require('bcrypt')
 
-const jwt     = require('jsonwebtoken')
+//const jwt     = require('jsonwebtoken')
+//const cookieParser = require('cookie-parser')
+//const app = express()
+//const port = process.env.PORT || 5000
+//app.use(cookieParser())
+//app.set('trust proxy', 1) // HTTPS behind proxy
+
+// CORS 設定
+//app.use(cors({
+//  origin: process.env.FRONTEND_ORIGIN,
+//  credentials: true
+//}))
+//app.use(express.json())
+
+// DB 接続
+//const dbPath = process.env.DB_PATH
+//const db = new sqlite3.Database(dbPath, err => {
+//  if (err) console.error(err.message)
+//  else    console.log(`Connected to SQLite at ${dbPath}`)
+//})
+
+require('dotenv').config({ path: '.env.dev' }) // ← .env を読み込む
+const express = require('express')
+const cors = require('cors')
+// const sqlite3 = require('sqlite3').verbose() // ← 不要になるため削除またはコメントアウト
+const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken')
 const cookieParser = require('cookie-parser')
+
+// Neon DB接続用のライブラリを追加
+const { neon } = require('@neondatabase/serverless')
+
 const app = express()
 const port = process.env.PORT || 5000
+
+// Neon DBに接続
+// 接続情報は環境変数 DATABASE_URL から取得
+const sql = neon(process.env.DATABASE_URL)
+
 app.use(cookieParser())
 app.set('trust proxy', 1) // HTTPS behind proxy
 
@@ -19,57 +54,132 @@ app.use(cors({
 }))
 app.use(express.json())
 
-// DB 接続
-const dbPath = process.env.DB_PATH
-const db = new sqlite3.Database(dbPath, err => {
-  if (err) console.error(err.message)
-  else    console.log(`Connected to SQLite at ${dbPath}`)
+/*
+
+*/
+
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`)
+
 })
 
-// サインアップ
-const saltRounds = 10
-app.post('/api/auth/signup', (req, res) => {
-  bcrypt.hash(req.body.password, saltRounds, (err, hash) => {
-    if (err) return res.status(500).json({ error: err.message })
-    const sql = 'INSERT INTO users (email,password) VALUES (?,?)'
-    db.run(sql, [req.body.email, hash], err => {
-      if (err) return res.status(400).json({ error: err.message })
-      res.json({ message: 'ご登録ありがとうございます' })
-    })
+
+async function startServer() {
+  // 1) データベース接続確認
+  try {
+    const { rows } = await sql`SELECT email FROM users`;
+    console.log('Database connected successfully:', rows)
+    const result = await sql`SELECT email FROM users`;
+    console.log('raw result:', result);
+  } catch (err) {
+    console.error('Failed to connect to database:', err)
+    process.exit(1)  // 接続失敗ならプロセス停止
+  }
+
+  // 2) サーバ起動
+  app.listen(port, () => {
+    console.log(`Server running on port ${port}`)
   })
-})
+}
+
+startServer()
+// サインアップ
+const saltRounds = 10;
+
+// サインアップ (ユーザー登録)
+app.post('/api/auth/signup', async (req, res) => {
+  console.log('--- POST /api/auth/signup ---');
+  try {
+    const { email, password } = req.body;
+    console.log('リクエストボディ:', { email }); // パスワードはログに出力しない
+
+    const hash = await bcrypt.hash(password, saltRounds);
+
+    // Neon DBにユーザーを挿入
+    // sqlテンプレートリテラルがSQLインジェクションを防止します
+    await sql`INSERT INTO USERS (email, password) VALUES (${email}, ${hash})`;
+
+    // 成功時のレスポンス (作成成功なのでステータスコード201を返すのが一般的)
+    res.status(201).json({ message: 'ご登録ありがとうございます' });
+
+  } catch (err) {
+    // emailカラムにUNIQUE制約がある場合、重複エラーをハンドリング
+    if (err.message.includes('duplicate key value violates unique constraint')) {
+      return res.status(400).json({ error: 'このメールアドレスは既に使用されています。' });
+    }
+    // その他のサーバーエラー
+    console.error(err);
+    res.status(500).json({ error: 'サーバーエラーが発生しました。' });
+  }
+});
 
 // サインイン
-app.post('/api/auth/signin', (req, res) => {
-  const sql = 'SELECT * FROM users WHERE email = ?'
-  db.get(sql, [req.body.email], (err, user) => {
-    if (err) return res.status(400).json({ error: err.message })
-    if (!user) return res.status(401).json({ message: 'Email not found' })
-    bcrypt.compare(req.body.password, user.password, (err, ok) => {
-      if (err) return res.status(500).json({ error: err.message })
-      if (!ok) return res.status(401).json({ message: 'Password incorrect' })
+app.post('/api/auth/signin', async (req, res) => {
+  try {
+    const { email, password } = req.body;
 
-      const payload = { id: user.id, email: user.email }
-      const token = jwt.sign(
-        payload,
-        process.env.JWT_SECRET,
-        { expiresIn: Number(process.env.JWT_EXPIRES_IN) }
-      )
-      res.json({ token })
-    })
-  })
-})
+    // Neon DBからemailでユーザーを検索 (結果は配列で返る)
+    const users = await sql`SELECT * FROM users WHERE email = ${email}`;
+
+    // ユーザーが存在しない場合
+    if (users.length === 0) {
+      // どちらが違うか特定させないために、メッセージは統一するのが安全です
+      return res.status(401).json({ message: 'メールアドレスまたはパスワードが違います。' });
+    }
+
+    const user = users[0]; // 配列の最初の要素がユーザー情報
+
+    // ハッシュ化されたパスワードを比較
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    // パスワードが一致しない場合
+    if (!isMatch) {
+      return res.status(401).json({ message: 'メールアドレスまたはパスワードが違います。' });
+    }
+
+    // JWTペイロードを作成
+    const payload = { id: user.id, email: user.email };
+
+    // JWTを生成
+    const token = jwt.sign(
+      payload,
+      process.env.JWT_SECRET,
+      { expiresIn: Number(process.env.JWT_EXPIRES_IN) }
+    );
+
+    // トークンをレスポンスとして返す
+    res.json({ token });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'サーバーエラーが発生しました。' });
+  }
+});
 
 // 認証済みユーザー情報取得
 app.get('/api/auth/member', (req, res) => {
-  const auth = req.headers.authorization || ''
-  const token = auth.replace(/^Bearer\s+/, '')
-  jwt.verify(token, process.env.JWT_SECRET, (err, payload) => {
-    if (err) return res.sendStatus(403)
-    res.json({ member: payload })
-  })
-})
+  try {
+    const authHeader = req.headers.authorization;
 
+    // Authorizationヘッダーがない、または形式が正しくない場合
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      return res.status(401).json({ message: '認証トークンが必要です。' });
+    }
+
+    // 'Bearer 'の部分を取り除き、トークンのみを抽出
+    const token = authHeader.split(' ')[1];
+
+    // トークンを検証。無効な場合はエラーが投げられ、catchブロックで処理される
+    const payload = jwt.verify(token, process.env.JWT_SECRET);
+
+    // 検証成功後、ペイロードを返す
+    res.json({ member: payload });
+
+  } catch (err) {
+    // jwt.verifyが失敗した場合 (期限切れ、改ざんなど)
+    res.status(403).json({ error: '認証トークンが無効です。' });
+  }
+});
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`)
 })
