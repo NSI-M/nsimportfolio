@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import { NuxtLink } from '#components';
+
+</script>
+
 <template>
         <section id="footer" >
             <div class="RowWrapper-UmqTg HEhan jqlJed">
@@ -52,6 +57,9 @@
                                                 </li>
                                                 <li class="NavigationListItemWrapper-cxLZKD dsgTQs">
                                                     <a class="NavigationInternalLink-cWEaeo" href="https://www.kiel-mj.com/contact/">お問い合わせ</a>
+                                                </li>
+                                                <li class="NavigationListItemWrapper-cxLZKD dsgTQs">
+                                                    <NuxtLink class="NavigationInternalLink-cWEaeo" to="/laws">特定商取引法に基づく表記</NuxtLink>
                                                 </li>
                                             </ul>
                                         </div>

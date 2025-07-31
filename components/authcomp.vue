@@ -7,5 +7,5 @@ const { data: member } = await useAsyncData('member', () => useAuth().fetchMembe
 
 <template>
   <slot v-if="member" />
-  <p v-else>この機能はログインが必要です。</p>
+  <p v-else></p>
 </template>

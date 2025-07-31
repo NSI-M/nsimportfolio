@@ -1212,17 +1212,48 @@
     padding-bottom: 1vw;
     box-sizing: border-box;
 }
+
+.flexbox h2 {
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.flexbox h3 {
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.flexbox dl {
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 @media (max-width: 767px) {
     .flexbox p {
-        font: 2em sans-serif;
+        font: 1em sans-serif;
+        width: 100%;
+        padding-left: 5%;
+        margin-right: 5%;
+
     }
     }
     
 
 @media (min-width: 768px) {
 .flexbox p {
-    font: 5em sans-serif;
+    font: 1em sans-serif;
+    width: 100%;
+    padding-left: 5%;
+    margin-right: 5%;
 }
+}
+
+.normallist {
+    list-style: none;
+    padding-left: 5%;
+    margin-right: 5%;
 }
 
 .flexboxa {
