@@ -16,7 +16,7 @@
             </tbody>
         </table>
         <authcomp>
-            hogehoge
+            <a href="viptickets/">ご招待チケットを確認する</a>
         </authcomp>
 
 </template>

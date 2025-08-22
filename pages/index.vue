@@ -17,9 +17,7 @@
         <h2>
             <span style="font-family: 'Orbitron';">Our Next Schedule</span>
         </h2>
-
         <callender/>
-
         <div class="flexcontainer">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">

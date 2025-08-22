@@ -1,0 +1,2 @@
+POST  https://localhost:3000/api/checkout
+Content-Type: application/json

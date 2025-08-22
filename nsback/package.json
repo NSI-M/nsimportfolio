@@ -1,7 +1,7 @@
 {
   "name": "nsback",
   "engines": {
-    "node": "20.17.0" 
+    "node": "20.17.0"
   },
   "version": "1.0.0",
   "description": "",
@@ -25,6 +25,7 @@
     "firebase": "^11.9.1",
     "jsonwebtoken": "^9.0.2",
     "nodemon": "^3.1.10",
-    "sqlite3": "^5.1.7"
+    "sqlite3": "^5.1.7",
+    "stripe": "^18.4.0"
   }
 }

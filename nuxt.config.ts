@@ -12,10 +12,12 @@ export default defineNuxtConfig({
     '@sidebase/nuxt-auth'
   ],
   runtimeConfig: {
+    stripeSecret: process.env.STRIPE_SECRET_KEY,
     public: {
       authOrigin: process.env.NUXT_PUBLIC_AUTH_ORIGIN,
       frontendOrigin: process.env.NUXT_PUBLIC_FRONTEND_ORIGIN,
-      apiBase: process.env.API_BASE
+      apiBase: process.env.API_BASE,
+      publishableKey: process.env.STRIPE_PUBLIC_KEY
     }
   },
   auth: {
@@ -43,7 +45,7 @@ export default defineNuxtConfig({
   },
   nitro: {
     devProxy: {
-      '/api': {
+      '/api/auth': {
         target: process.env.NUXT_PUBLIC_AUTH_ORIGIN,
         changeOrigin: true,
         cookieDomainRewrite: 'localhost'
@@ -93,7 +95,11 @@ export default defineNuxtConfig({
         {src:'https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js'},
         {src:'https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'},
         {src:'/js/script.js'},
-        {src:'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js'}
+        {src:'https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js'},
+        {
+          src: 'https://js.stripe.com/basil/stripe.js',
+          async: true,
+        }
       ]
     }
   }
