@@ -52,9 +52,11 @@ const onSignin = async () => {
   }
 }
 useHead({
- meta: [
+  title: 'SIGN IN',
+  meta: [
     {name: 'description', content: 'SIGN IN to discover membership information'},
     {property: 'og:title', content: 'SIGN IN'},
+    {name:"robots", content:"noindex, nofollow, max-image-preview:large"}
  ]
 })
 

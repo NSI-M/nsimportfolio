@@ -280,6 +280,9 @@
     .formcomp button {
         margin: 0 auto;
     }
+    .formcomp p {
+        margin-left: 5%;
+    }
 }
 
 .formcomp button:hover {
