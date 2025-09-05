@@ -26,6 +26,7 @@
 </template>
 <script>
 useHead({
+  title: 'ご登録ありがとうございます',
   script: [
     {
       src: 'https://js.stripe.com/basil/stripe.js',
