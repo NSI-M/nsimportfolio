@@ -70,14 +70,14 @@ export default defineNuxtConfig({
         {property:"og:title", content:"Japan Runway Show"},
         {property:"og:description", content:"Japan Runway Show(ジャパンランウェイショー)公式サイトです。日本に新設のファッションウィークを設立し、芸術とファッションの振興を目指します。"},
         {property:"og:url", content:"https://www.jrs.kiel-mj.com/"},
-        {property:"og:image", content:"@/assets/img/thumbdef.png"},
+        {property:"og:image", content:"/img/thumbdef.png"},
         {property:"og:type", content:"website"},
         {property:"twitter:author", content:"MIYU ISHITSUBO"},
         {property:"twitter:card", content:"summary_large_image"},
         {property:"twitter:creator", content:"@ffever_m"},
         {property:"twitter:description", content:"@ffever_m"},
         {property:"twitter:domain", content:"jrs.kiel-mj.com"},
-        {property:"twitter:image", content:"@/assets/img/thumbdef.png"},
+        {property:"twitter:image", content:"/img/thumbdef.png"},
         {property:"twitter:title", content:"Japan Runway Show"},
         {property:"fb:app_id", content:"350213290965729"},
       ],
@@ -87,7 +87,7 @@ export default defineNuxtConfig({
         {rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"},
         {rel:"stylesheet", href:"https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"},
         {rel:"canonical", href:"https://www.jrs.kiel-mj.com/"},
-        {rel:"shortcut icon", href:"/public/faviconl.ico"}
+        {rel:"shortcut icon", href:"/faviconl.ico"}
       ],
       script: [
         {src:'https://code.jquery.com/jquery-3.5.1.slim.min.js'},
