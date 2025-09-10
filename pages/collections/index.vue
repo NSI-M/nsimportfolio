@@ -26,7 +26,7 @@ useHead({
     {
       src: '/js/swiper-bundle.min.js',
       // body: true をつけると<body>の末尾で読み込まれる
-      //body: true, 
+      body: true, 
     }],
   meta: [
       {name: 'description', content: 'これまでのJapan Runway Showのコレクションをチェック'},
