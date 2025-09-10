@@ -18,6 +18,7 @@
             <span style="font-family: 'Orbitron';">Our Next Schedule</span>
         </h2>
         <callender/>
+        <button class="buybutton" @click="link">チケットを見る</button> 
         <div class="flexcontainer">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
@@ -78,10 +79,10 @@
 </template>
 
 <script setup>
-if (import.meta.client) {
+import { onMounted } from 'vue'
+onMounted(() => {
     const image = document.querySelector('.carousel');
     const originalFilter = image.style.filter; // 初期状態のフィルターを保存
-
     window.addEventListener('scroll', () => {
     const scrollTop = window.pageYOffset;
     const opacity = 1.2 - 1.5* scrollTop / window.innerHeight; // スクロール量に応じて1.2～0の値を計算
@@ -89,5 +90,11 @@ if (import.meta.client) {
             // グレースケールフィルターの透明度を調整
     image.style.filter = `grayscale(${opacity})`;
     });
+})
+import { navigateTo } from '#app'
+
+function link() {
+  navigateTo('/tickets/') // 任意の内部リンクへ遷移
 }
+
 </script>

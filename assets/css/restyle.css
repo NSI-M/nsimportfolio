@@ -1,3 +1,136 @@
+        .t-xxx{
+            width: 100%;
+            color:#c9a063;
+            font-size: 24px;
+            padding:0 auto;
+            margin: 0 auto;
+        }
+        /* クラスやセレクタを適切なものに変更してください */
+        .box {
+            width: calc(100% / 3);
+
+            /* 横幅を100%に設定 */
+            @media screen and (max-width: 767px) {
+                width: calc(100% / 3);
+                margin-top: 0%;
+
+            }
+
+            @media screen and (min-width: 768px) {
+                width: calc(100% / 4);
+            }
+
+            height: 0;
+            padding-bottom: 56.25%;
+            /* 16/9 = 0.5625 */
+            position: relative;
+        }
+
+        /* 中に配置されるコンテンツ（テキストや画像など）を絶対位置で配置 */
+        .box>* {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            margin-top: 0%;
+        }
+
+        .t-img {
+            margin-left: 5px;
+            margin-right: 5px;
+            /* 余白を0pxに設定 */
+            width: 90%;
+            /* 横幅を最大に設定 */
+            height: 0;
+            padding-bottom: 150%;
+            /* 縦幅を横幅の1.5倍に設定 */
+
+            /* 画像が親要素いっぱいに広がるように絶対位置で配置 */
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .t-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            /* 画像を親要素に収める */
+            max-width: 100%;
+            /* 画像の横幅が親要素を超えないようにする */
+            max-height: 100%;
+            /* 画像の縦幅が親要素を超えないようにする */
+            position: absolute;
+
+        }
+
+
+        .t-info {
+            /* t-imgの真下に配置 */
+            position: absolute;
+            top: 100%;
+            /* t-imgの下に配置 */
+            left: 0;
+            width: 100%;
+            /* 横幅を100%に設定 */
+            text-align: center;
+            /* 文字を中央にそろえる */
+            color: rgb(255, 255, 255);
+            /* 文字の色を白に設定 */
+            vertical-align: top;
+        }
+
+        .t-info a {
+            position: relative;
+            font-size: 12px;
+            font-weight: lighter;
+            display: inline-block;
+            padding: 1px 5px;
+            transition: .3s;
+            letter-spacing: .05em;
+            color: #ffffff;
+            vertical-align: top;
+            text-decoration: none;
+        }
+
+        .t-info a:after {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 1px;
+            content: "";
+            transition: .3s;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+            background-color: #337160;
+        }
+
+        .t-info a:hover:after {
+            text-decoration: underline;
+            width: 100%;
+        }
+
+        .t-name {
+            width: 100%;
+            max-height: 15%;
+        }
+
+        .t-sns {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            /* t-nameの右に配置 */
+            margin-left: 20px;
+            /* 適切な余白を設定 */
+            transform: translateY(-50%);
+            /* 上に50%移動して垂直中央に配置 */
+        }
+
+
+
+
 .hidden {
     display: none;
 }
@@ -400,14 +533,14 @@
 @media (max-width: 767px) {
     .carousel {
         width: 80%;
-
+        margin-top: 2%;
     }
 }
 
 @media (min-width: 768px) {
     .carousel {
         width: 40%;
-
+        margin-top: 2%;
     }
 }
 
@@ -1297,6 +1430,24 @@
     margin-left: 5%;
     margin-right: 5%;
 
+}
+
+.buybutton {
+    font-family: Orbitron;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 1);
+    font-size: 0.8rem;
+    color: rgba(0, 0, 0, 1);
+    width: 40%;
+    height: 1.6rem;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+
+.buybutton:hover {
+    background-color: rgba(08, 08, 08, 1);
+    box-shadow: 0 0.5rem 0.5rem rgba(255, 255, 255, 1);
 }
 
 .newsitem {
