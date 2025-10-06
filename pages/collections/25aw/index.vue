@@ -11,12 +11,37 @@
                 </div>
                 <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:900px;overflow:hidden;">
                     <div>
-                        <img style="max-width: 100%;" src="/img/thumbdef.png" alt="ヘリテージページェントジャパン　ご協賛企業">
+                        <img style="max-width: 100%;" src="/img/thumbdef.png" alt="JAPAN RUNWAY SHOW">
                     </div>
                     <div>
-                        <a href="osakaosho/" target="_self">
-                            <img style="max-width: 100%;" src="/img/thumbdef.png" alt="株式会社ウィロー">
-                        </a>
+                        <NuxtLink to="/collections/25aw/so">
+                            <img style="max-width: 100%;" src="@/assets/img/VOLATA_logo.png" alt="FAKUI & VOLATA">
+                        </NuxtLink>
+                    </div>
+                    <div>
+                        <NuxtLink to="/collections/25aw/yomeishu">
+                            <img style="max-width: 100%;" src="@/assets/img/SWlogo@2x.png" alt="スリムウォーク">
+                        </NuxtLink>
+                    </div>
+                    <div>
+                        <NuxtLink to="/collections/25aw/so2">
+                            <img style="max-width: 100%;" src="@/assets/img/L_yoko_red.png" alt="着物ダンス">
+                        </NuxtLink>
+                    </div>
+                    <div>
+                        <NuxtLink to="/collections/25aw/flei">
+                            <img style="max-width: 100%;" src="@/assets/img/osho.png" alt="大阪王将">
+                        </NuxtLink>
+                    </div>
+                    <div>
+                        <NuxtLink to="/collections/25aw/joycart">
+                            <img style="max-width: 100%;" src="@/assets/img/56312.jpg" alt="act:1on">
+                        </NuxtLink>
+                    </div>
+                    <div>
+                        <NuxtLink to="/collections/25aw/ciel">
+                            <img style="max-width: 100%;" src="@/assets/img/56312.jpg" alt="act:1on">
+                        </NuxtLink>
                     </div>
                     <div>
                         <a href="" target="_self">
@@ -48,16 +73,6 @@
                         </a>
                     </div>
                     <div>
-                        <a href="https://sakae-clinic.com/" target="_blank">
-                            <img src="/img/thumbdef.png" alt="Kiel Management Japan">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="https://fem-tech.site/" target="_blank">
-                            <img src="/img/thumbdef.png" alt="フェムテックアカデミー">
-                        </a>
-                    </div>
-                    <div>
                         <a href="https://www.kiel-mj.com/" target="_blank">
                             <img src="/img/thumbdef.png" alt="Kiel Management Japan">
                         </a>
@@ -81,6 +96,7 @@
 
 // 1. useHeadでSwiperのCDNリソースを読み込む
 useHead({
+  title: '2025 AUTUMN/WINTER | Japan Runway Show',
   script: [
     {
       src: '/js/jssor.slider-27.5.0.min.js',
@@ -88,8 +104,8 @@ useHead({
       body: false, 
     }],
  meta: [
-    {name: 'description', content: '25ss | Japan Runway Show'},
-    {property: 'og:title', content: 'Collections | Japan Runway Show'},
+    {name: 'description', content: '2025 AUTUMN/WINTER | Japan Runway Show'},
+    {property: 'og:title', content: '2025 AUTUMN/WINTER | Japan Runway Show'},
  ]
 })
 

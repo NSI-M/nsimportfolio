@@ -114,8 +114,8 @@ useHead({
       body: false, 
     }],
  meta: [
-    {name: 'description', content: '25ss | Japan Runway Show'},
-    {property: 'og:title', content: 'Collections | Japan Runway Show'},
+    {name: 'description', content: '2025 SPRING/SUMMER | Japan Runway Show'},
+    {property: 'og:title', content: '2025 SPRING/SUMMER | Japan Runway Show'},
  ]
 })
 

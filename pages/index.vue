@@ -1,11 +1,7 @@
 <template>
     
     <headertop/>
-    <a class="visual" href="collections/" target="_self">
-        <video poster="@/assets/img/jrstop.jpg" src="@/assets/img/volata16.mp4" autoplay loop muted="muted" playsinline controlslist="nodownload" oncontextmenu="return false;">
-        </video>
-        <p>私たちのコレクションを見る</p>
-    </a>
+    <topvideo/>
     <div class="pflexbox">
         <h2>
             <span style="font-family: 'Orbitron';">Japan Runway Show</span>とは

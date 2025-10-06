@@ -17,27 +17,27 @@ const { data: posts } = await useAsyncData('news', () => {
   </div>
   
         <div v-for="post in posts" :key="post.id" class="newsitem">
-        <NuxtLink :to="post.path" style="display: flex; ">
-            <div class="newsimg">
-              <img
-                v-if="post.image"
-                :src="post.image.src"
-                :alt="post.image.alt"
-                class="w-full h-auto object-cover"
-              />
-            </div>
-            <div class="newsinfo">
-              <div class="newsinfodata">
-                <span class="newsbudge">
-                  {{ post.badge }}-{{ formatDate(post.date) }}
-                </span>
+          <NuxtLink :to="post.path" style="display: flex; ">
+              <div class="newsimg">
+                <img
+                  v-if="post.image"
+                  :src="post.image.src"
+                  :alt="post.image.alt"
+                  class="w-full h-auto object-cover"
+                />
               </div>
-              <div class="newstitle">
-                <p>
-                  {{ post.title }}
-                </p>
+              <div class="newsinfo">
+                <div class="newsinfodata">
+                  <span class="newsbudge">
+                    {{ post.badge }}-{{ formatDate(post.date) }}
+                  </span>
+                </div>
+                <div class="newstitle">
+                  <p>
+                    {{ post.title }}
+                  </p>
+                </div>
               </div>
-            </div>
           </NuxtLink>
         </div>
         <div class="newsitem">
