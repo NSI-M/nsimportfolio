@@ -1499,6 +1499,22 @@
     font-size: 12px;
 }
 
+.newsbudgem {
+    background: linear-gradient(45deg, #e0e0e0, #c0c0c0, #f5f5f5, #c0c0c0, #e0e0e0 ); 
+    color: rgba(12, 12, 12, 1);
+    padding: .45em 1em;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bolder;
+}
+
+@media (max-width: 1024px) {
+    .newsbudgem {
+        margin: 0 auto;
+    }
+}
+
+
 .newstitle  {
     margin: 0;
     width: 100%;
