@@ -11,7 +11,7 @@
       <div class="flexbox">
         <div class="box">
           <div class="t-img">
-            <img class="mainimg" alt="shameless opinion" src="/img/thumbdef.png" data-index="1"/>
+            <img class="mainimg" alt="shameless opinion" src="/img/so/1.jpg" data-index="1"/>
             <div class="t-info">
             </div>
           </div>
