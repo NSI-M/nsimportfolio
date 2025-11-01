@@ -21,7 +21,7 @@ useHead({
     {name: 'description', content: 'Ticket Checkout | Japan Runway Show'},
     {property: 'og:title', content: 'Ticket Checkout | Japan Runway Show'},
     {property:"twitter:description", content:"Ticket Checkout | Japan Runway Show"},
-    {name:"robots", content:"noindex, nofollow, max-image-preview:large"}
+    {name:"robots", content:"index, nofollow, max-image-preview:large"}
  ]
 })
 

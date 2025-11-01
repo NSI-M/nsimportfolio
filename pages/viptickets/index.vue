@@ -49,7 +49,7 @@ useHead({
     {name: 'description', content: 'チケット一覧 | Japan Runway Show'},
     {property: 'og:title', content: 'チケット一覧 | Japan Runway Show'},
     {property:"twitter:description", content:"チケット一覧 | Japan Runway Show"},
-    {name:"robots", content:"noindex, nofollow, max-image-preview:large"}
+    {name:"robots", content:"index, nofollow, max-image-preview:large"}
  ]
 })
 </script>
