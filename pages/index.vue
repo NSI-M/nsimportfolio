@@ -92,5 +92,13 @@ import { navigateTo } from '#app'
 function link() {
   navigateTo('/tickets/') // 任意の内部リンクへ遷移
 }
+useHead({
+  title: 'Japan Runway Show | 日本のファッションウィーク',
+  meta: [
+    {name: 'description', content: 'Japan Runway Show(ジャパンランウェイショー)公式サイトです。日本に新設のファッションウィークを設立し、芸術とファッションの振興を目指します。'},
+    {property: 'og:title', content: 'Japan Runway Show'},
+    {name:"robots", content:"index, follow, max-image-preview:large"}
+ ]
+})
 
 </script>
