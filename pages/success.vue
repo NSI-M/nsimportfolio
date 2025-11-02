@@ -38,7 +38,7 @@ useHead({
     }
 ],
  meta: [
-    {name:"robots", content:"noindex, nofollow, max-image-preview:large"}
+    {name:"robots", content:"index, nofollow, max-image-preview:large"}
  ]
 })
 
