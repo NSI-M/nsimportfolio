@@ -111,7 +111,7 @@ useHead({
     {name: 'description', content: '特定商取引法に基づく表記 | Japan Runway Show'},
     {property: 'og:title', content: '特定商取引法に基づく表記 | Japan Runway Show'},
     {property:"twitter:description", content:"特定商取引法に基づく表記 | Japan Runway Show"},
-    {name:"robots", content:"noindex, nofollow, max-image-preview:large"}
+    {name:"robots", content:"index, nofollow, max-image-preview:large"}
  ]
 })
 </script>
