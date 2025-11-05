@@ -6,7 +6,7 @@
             <span style="font-family: 'Orbitron';">VIP Tickets</span>
         </h2>
         <p>
-            ご観覧を検討いただきありがとうございます。<br>ご参加の際はご購入ページ記載の利用規約の確認をお願いいたします。外部団体の撮影に関する同意が必要です。
+            OPEN12:00/START13:00/PARTY18:00~20:30<br>ご観覧を検討いただきありがとうございます。<br>ご参加の際はご購入ページ記載の利用規約の確認をお願いいたします。外部団体の撮影に関する同意が必要です。
         </p>
         <div class="newsitem">
             <a href="checkout_vip" style="display: flex;">
