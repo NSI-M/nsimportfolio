@@ -5,7 +5,7 @@
       </div>
       <div class="flexboxa">
         <h2>
-          <a href="https://shamelessopinion.com/" target="_blank">Shameless Opinion</a>
+          <a href="https://shamelessopinion.com/" target="_blank">Yomeishu</a>
         </h2>
       </div>
       <div class="flexbox">
