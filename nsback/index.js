@@ -452,7 +452,55 @@ app.post('/api/auth/create-checkout-session9', async (req, res) => {
   res.send({clientSecret: session.client_secret});
 });
 
+//パートナー・コ
+app.post('/api/auth/create-checkout-session10', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    ui_mode: 'embedded',
+    line_items: [
+      {
+        // Provide the exact Price ID (for example, price_1234) of the product you want to sell
+        price: 'price_1SUekr09dtrC0gbUGTuiF4yF',
+        quantity: 1,
+      },
+    ],
+    consent_collection: {
+        terms_of_service: 'required',
+    },
+    //metadata: {
+    //  agreed_to_terms: agreed.toString()
+    //},
+    mode: 'payment',
+    return_url: `${process.env.FRONTEND_ORIGIN}/success`,
+    automatic_tax: {enabled: true},
+  });
+  console.log(`ええかんじやね`)
+  res.send({clientSecret: session.client_secret});
+});
 
+//ブランドモデル用のチケット
+app.post('/api/auth/create-checkout-session11', async (req, res) => {
+  const session = await stripe.checkout.sessions.create({
+    ui_mode: 'embedded',
+    line_items: [
+      {
+        // Provide the exact Price ID (for example, price_1234) of the product you want to sell
+        price: 'price_1SUem809dtrC0gbU3xHzEJcC',
+        quantity: 1,
+      },
+    ],
+    consent_collection: {
+        terms_of_service: 'required',
+    },
+    //metadata: {
+    //  agreed_to_terms: agreed.toString()
+    //},
+    mode: 'payment',
+    return_url: `${process.env.FRONTEND_ORIGIN}/success`,
+    automatic_tax: {enabled: true},
+  });
+  console.log(`ええかんじやね`)
+  res.send({clientSecret: session.client_secret});
+});
 
 
 //多分ここまででよい
