@@ -14,7 +14,7 @@
                     <img src="@/assets/img/thumbdef.png"/>
                 </div>
                 <div class="newsinfo" style="justify-content: center;">
-                    <h3>ご観覧チケット<br>￥10,00</h3>
+                    <h3>ご観覧チケット<br>￥10,000</h3>
                 </div>
             </a>
         </div>
