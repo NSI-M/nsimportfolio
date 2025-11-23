@@ -16,7 +16,7 @@
                             </svg>
                         </button>
                         <ul class="menu" id="menu">
-                            <li class="menulists"><NuxtLink to="/collections/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'Orbitron';">Collection</NuxtLink></li>
+                            <li class="menulists"><NuxtLink to="/collections/" external  target="_self" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'Orbitron';">Collection</NuxtLink></li>
                             <li class="menulists"><NuxtLink to="/missions/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'Orbitron';">Our mission</NuxtLink></li>
                             <li class="menulists"><NuxtLink to="/collaborations/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'Orbitron';">Collaboration</NuxtLink></li>
                             <li class="menulists"><NuxtLink to="/arts/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'Orbitron';">Arts</NuxtLink></li>
