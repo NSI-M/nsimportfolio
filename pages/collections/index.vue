@@ -4,9 +4,9 @@
     <div class="flexbox">
         <div class="swiper">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><NuxtLink to="/collections/25ss/"><img src="@/assets/img/25ss.jpg" alt="25SS" style="max-width: 100%;"></NuxtLink></div>
+                <div class="swiper-slide"><NuxtLink to="/collections/26pf/"><img src="@/assets/img/26pf.jpg" alt="26aw" style="max-width: 100%;"></NuxtLink></div>
                 <div class="swiper-slide"><NuxtLink to="/collections/25aw/"><img src="@/assets/img/26aw11.jpg" alt="26aw" style="max-width: 100%;"></NuxtLink></div>
-                <div class="swiper-slide"><NuxtLink to="/collections/26aw/"><img src="@/assets/img/tickets.jpg" alt="26aw" style="max-width: 100%;"></NuxtLink></div>
+                <div class="swiper-slide"><NuxtLink to="/collections/25ss/"><img src="@/assets/img/25ss.jpg" alt="25SS" style="max-width: 100%;"></NuxtLink></div>
             </div>
         </div>
 

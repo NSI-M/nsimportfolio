@@ -11,27 +11,52 @@
                 </div>
                 <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:600px;overflow:hidden;">
                     <div>
-                        <NuxtLink to="/collections/26aw/yomeishu">
+                        <NuxtLink to="/collections/26pf/sazii" external target="_self">
                             <img style="width: 100%;" src="/img/sazii/logo.png" alt="サジーの恵み">
                         </NuxtLink>
                     </div>
                     <div>
-                        <NuxtLink to="/collections/26aw/yomeishu">
-                            <img style="max-width: 100%;" src="/img/kean/logo.png" alt="KEAN HEALTH">
+                        <NuxtLink to="/collections/26pf/chichiiiichichi" external target="_self">
+                            <img style="width: 100%;" src="/img/chichiiiichichi/logo.png" alt="chichiiiichichi">
+                        </NuxtLink>
+                    </div>                    
+                    <div>
+                        <NuxtLink to="/collections/26pf/lisakubota" external target="_self">
+                            <img style="width: 100%;" src="/img/lisakubota/logo.png" alt="lisakubota"></img>
+                        </NuxtLink>
+                    </div>                    
+                    <div>
+                        <NuxtLink to="/collections/26pf/atom" external target="_self">
+                            <img style="width: 100%;" src="/img/atom/logo.png" alt="atom">
+                        </NuxtLink>
+                    </div>                    
+                    <div>
+                        <NuxtLink to="/collections/26pf/ollirua" external target="_self">
+                            <img style="width: 100%;" src="/img/ollirua/logo.png" alt="ollirua">
+                        </NuxtLink>
+                    </div>                    
+                    <div>
+                        <NuxtLink to="/collections/26pf/chatgene" external target="_self">
+                            <img style="max-width: 100%;" src="/img/kean/cg.png" alt="KEAN HEALTH">
                         </NuxtLink>
                     </div>
                     <div>
-                        <NuxtLink to="/collections/26aw/yomeishu">
-                            <img style="max-width: 100%;" src="/img/kojiko/logo.png" alt="麹粉">
+                        <NuxtLink to="/collections/26pf/so" external target="_self">
+                            <img style="max-width: 100%;" src="/img/so/logo.png" alt="shameless opinion">
                         </NuxtLink>
                     </div>
                     <div>
-                        <NuxtLink to="/collections/26aw/yomeishu">
-                            <img style="max-width: 100%;" src="/img/kojiko/logo.png" alt="麹粉">
+                        <NuxtLink to="/collections/26pf/sunnyroom" external target="_self">
+                            <img style="max-width: 100%;" src="/img/sunnyroom/logo.png" alt="sunny room">
                         </NuxtLink>
                     </div>
                     <div>
-                        <NuxtLink to="/collections/26aw/yomeishu">
+                        <NuxtLink to="/collections/26pf/eah" external target="_self">
+                            <img style="max-width: 100%;" src="/img/eah/logo.png" alt="eat and holdings">
+                        </NuxtLink>
+                    </div>
+                    <div>
+                        <NuxtLink to="/collections/26pf/kojiko" external target="_self">
                             <img style="max-width: 100%;" src="/img/kojiko/logo.png" alt="麹粉">
                         </NuxtLink>
                     </div>
@@ -61,9 +86,12 @@ useHead({
       // body: true をつけると<body>の末尾で読み込まれる
       body: false, 
     }],
+ title: '2026 PREFALL COLLECTION | Japan Runway Show',
  meta: [
-    {name: 'description', content: '26aw | Japan Runway Show'},
+    {name: 'description', content: '26PREFALL | Japan Runway Show'},
     {property: 'og:title', content: 'Collections | Japan Runway Show'},
+    {property: 'og:description', content: 'Signatue Athletes 間宮 佑圭、濱田 真由、合田 智、荒谷 珠未、三輪 ダリヤ、北村 夢、石川 愛'}
+
  ]
 })
 
