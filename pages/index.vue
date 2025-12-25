@@ -40,7 +40,7 @@
                     </div>
                     <div class="carousel-item">
                         <a href="" target="_self">
-                            <img src="@/assets/img/IMG_4272.jpg" class="d-block w-100" alt="Japan Runway Show">
+                            <img src="@/assets/img/DSC08825.jpg" class="d-block w-100" alt="Japan Runway Show">
                         </a>
                     </div>
                     <div class="carousel-item">

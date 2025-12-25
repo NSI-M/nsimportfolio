@@ -16,8 +16,8 @@
                         </NuxtLink>
                     </div>
                     <div>
-                        <NuxtLink to="/collections/26pf/chichiiiichichi" external target="_self">
-                            <img style="width: 100%;" src="/img/chichiiiichichi/logo.png" alt="chichiiiichichi">
+                        <NuxtLink to="/collections/26pf/chichiiiiichichi" external target="_self">
+                            <img style="width: 100%;" src="/img/chichiiiiichichi/logo.png" alt="chichiiiiichichi">
                         </NuxtLink>
                     </div>                    
                     <div>
@@ -89,9 +89,8 @@ useHead({
  title: '2026 PREFALL COLLECTION | Japan Runway Show',
  meta: [
     {name: 'description', content: '26PREFALL | Japan Runway Show'},
-    {property: 'og:title', content: 'Collections | Japan Runway Show'},
+    {property: 'og:title', content: '26PREFALL | Japan Runway ShowCollections | Japan Runway Show'},
     {property: 'og:description', content: 'Signatue Athletes 間宮 佑圭、濱田 真由、合田 智、荒谷 珠未、三輪 ダリヤ、北村 夢、石川 愛'}
-
  ]
 })
 

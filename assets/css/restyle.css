@@ -21,7 +21,7 @@
             }
 
             height: 0;
-            padding-bottom: 56.25%;
+            padding-bottom: 50%;
             /* 16/9 = 0.5625 */
             position: relative;
         }
@@ -43,7 +43,7 @@
             width: 90%;
             /* 横幅を最大に設定 */
             height: 0;
-            padding-bottom: 150%;
+            padding-bottom: 135%;
             /* 縦幅を横幅の1.5倍に設定 */
 
             /* 画像が親要素いっぱいに広がるように絶対位置で配置 */
