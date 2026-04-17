@@ -52,7 +52,7 @@ const handleCheckout = async () => {
     // 2. Expressサーバーへ送信 ($fetchを使用)
     // ※URLはExpressサーバーのものに合わせてください
     const fetchClientSecret = async () => {
-        const response = await $fetch('http://localhost:5000/api/auth/create-checkout', {
+        const response = await $fetch('https://emmmoeback.vercel.app/api/auth/create-checkout', {
         method: 'POST',
         body: {
             line_items: lineItems
