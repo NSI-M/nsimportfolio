@@ -20,6 +20,11 @@ export default defineNuxtConfig({
       publishableKey: process.env.STRIPE_PUBLIC_KEY
     }
   },
+  content: {
+    experimental: {
+      sqliteConnector: 'native'
+    }
+  },
   auth: {
     originEnvKey: 'NUXT_PUBLIC_AUTH_ORIGIN',
     baseURL: process.env.NUXT_PUBLIC_AUTH_ORIGIN,
