@@ -16,8 +16,7 @@ const { data: posts } = await useAsyncData('news', () => {
     <h2><span style="font-family: 'Orbitron';">News</span></h2>
   </div>
   
-        <div v-for="post in posts" :key="post.id" class="newsitem">
-          <NuxtLink :to="post.path" style="display: flex; ">
+          <NuxtLink :to="post.path" v-for="post in posts" :key="post.id" class="newsitem">
               <div class="newsimg">
                 <img
                   v-if="post.image"
@@ -39,9 +38,7 @@ const { data: posts } = await useAsyncData('news', () => {
                 </div>
               </div>
           </NuxtLink>
-        </div>
-        <div class="newsitem">
-          <a style="display: flex; width: 100%;" href="/pdf/JRSvol3.pdf">
+          <a class="newsitem" href="/pdf/JRSvol3.pdf">
             <div class="newsimg">
               <img src="/pdficon.svg">
             </div>
@@ -58,6 +55,5 @@ const { data: posts } = await useAsyncData('news', () => {
               </div>
             </div>
           </a>
-        </div>
   
 </template>

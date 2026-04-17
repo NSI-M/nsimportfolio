@@ -8,8 +8,7 @@
         <p>
             OPEN12:00/START13:00/PARTY18:00~20:00<br>ご参加の際はご購入ページ記載の利用規約の確認をお願いいたします。外部団体の撮影に関する同意が必要です。<br>アフターパーティつきご観覧チケットでは、ショー終了後、次世代の基幹事業と目される「クリエイティブ・エコノミー」の興隆を期し、出展ブランドとクリエイターによるアフターパーティにご参加いただけます。
         </p>
-        <div class="newsitem">
-            <a href="checkout_x" style="display: flex;">
+            <a class="newsitem" href="checkout_x">
                 <div class="newsimg">
                     <img src="@/assets/img/thumbdef.png"/>
                 </div>
@@ -17,9 +16,7 @@
                     <h3>ご観覧チケット<br>￥10,000</h3>
                 </div>
             </a>
-        </div>
-        <div class="newsitem">
-            <a href="checkout_after" style="display: flex;">
+            <a class="newsitem" href="checkout_after">
                 <div class="newsimg">
                     <img src="@/assets/img/thumbdef.png"/>
                 </div>
@@ -27,7 +24,14 @@
                     <h3>アフターパーティつきご観覧チケット<br>￥15,000</h3>
                 </div>
             </a>
-        </div>
+            <a class="newsitem" href="checkout_test" >
+                <div class="newsimg">
+                    <img src="@/assets/img/thumbdef.png"/>
+                </div>
+                <div class="newsinfo" style="justify-content: center;">
+                    <h3>testご観覧チケット<br>￥0</h3>
+                </div>
+            </a>
 
     </div>
     <footern/>

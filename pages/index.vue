@@ -6,6 +6,7 @@
         <h2>
             <span style="font-family: 'Orbitron';">Japan Runway Show</span>とは
         </h2>
+        <cart/>
         <p>生成AI,SNSが飽和する時代に、生身の人間が纏う表皮としてのファッションを再考する。
             
             アーバンギャルドな視点のみならず、地方・伝統芸術文化にも焦点を当て、日本のファッションシーンのさらなる興隆を。
@@ -20,6 +21,11 @@
                 <div class="carousel-inner">
                     <div class="carousel-item">
                         <a href="" target="_self">
+                            <img src="@/assets/img/DSC08825.jpg" class="d-block w-100" alt="Japan Runway Show">
+                        </a>
+                    </div>
+                    <div class="carousel-item">
+                        <a href="" target="_self">
                             <img src="@/assets/img/26aw.jpg" class="d-block w-100" alt="Japan Runway Show">
                         </a>
                     </div>
@@ -31,16 +37,6 @@
                     <div class="carousel-item active">
                         <a href="" target="_self" >
                             <img src="@/assets/img/01.jpg" class="d-block w-100" alt="Japan Runway Show">
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="" target="_self">
-                            <img src="@/assets/img/IMG_5542.jpg" class="d-block w-100" alt="Japan Runway Show">
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="" target="_self">
-                            <img src="@/assets/img/DSC08825.jpg" class="d-block w-100" alt="Japan Runway Show">
                         </a>
                     </div>
                     <div class="carousel-item">

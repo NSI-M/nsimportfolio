@@ -2,6 +2,9 @@
     <Headertop/>
     <div class="flexbox">
         <div class="talentimagecontainer">
+                <button @click="addToCart('price_1TBHfD09dtrC0gbUvzv2Wh7i', 'お魚', '/img/thumbdef.png', 1)">商品を追加</button>
+    <button @click="addToCart('price_1Rvj0I09dtrC0gbUikNONw4w','焼肉', '', 1)">商品を追加</button>
+
             <img alt="Miyu Ishitsubo" src="/img/goda/1.jpg" class="mainimg"data-index="0"/>
         </div>
             <div class="talentinfocontainer">
@@ -54,5 +57,5 @@ useHead({
       {property: 'og:description', content: '合田 智子を起用したJapan Runway Show 2026 プレフォールキャンペーンをチェック'}
   ]
 })
-
+const { cart, addToCart, decreaseQuantity,clearCart } = useCart()
 </script>

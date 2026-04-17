@@ -187,6 +187,89 @@ app.listen(port, () => {
 const stsecret = process.env.STSECRET
 const stripe = require('stripe')(stsecret)
 app.use(express.static('public'))
+
+
+// ExpressでJSONを受け取るためのミドルウェア（設定していない場合）
+// app.use(express.json()); 
+
+app.post('/api/auth/create-checkout', async (req, res) => {
+  try {
+    // 1. Nuxtから送信された line_items を受け取る
+    const { line_items } = req.body;
+
+    // 空のカートが送られてきた場合のバリデーション
+    if (!line_items || line_items.length === 0) {
+      return res.status(400).send({ error: 'カートが空です' });
+    }
+
+    const session = await stripe.checkout.sessions.create({
+      ui_mode: 'embedded',
+      // 2. 受け取った配列をそのままセットする
+      line_items: line_items, 
+      custom_fields: [
+        {
+          key: 'customfield',
+          label: {
+            custom: 'ご希望の納期をお知らせください',
+            type: 'custom'
+          },
+          type: 'text'
+        }
+      ],
+      consent_collection: {
+          terms_of_service: 'required',
+      },
+      mode: 'payment',
+      return_url: `${process.env.FRONTEND_ORIGIN}/success`,
+      automatic_tax: { enabled: true },
+    });
+    
+    console.log(`ええかんじや`);
+    res.send({ clientSecret: session.client_secret });
+
+  } catch (error) {
+    console.error('Stripeエラー:', error);
+    res.status(500).send({ error: error.message });
+  }
+});
+
+//test
+app.post('/api/auth/create-checkout-session0', async (req, res) => {
+  const { quantity } = req.body;  // ← フロントから受け取る
+  const safeQuantity = Math.min(Math.max(parseInt(quantity) || 1, 1), 10);
+  const session = await stripe.checkout.sessions.create({
+    ui_mode: 'embedded',
+    line_items: [
+      {
+        // Provide the exact Price ID (for example, price_1234) of the product you want to sell
+        price: 'price_1TBHfD09dtrC0gbUvzv2Wh7i',
+        quantity: safeQuantity,
+      },
+    ],
+    custom_fields: [
+      {
+        key: 'customfield',
+        label: {
+          custom: 'ご希望の納期などをお伝えください',
+          type: 'custom'
+        },
+        type: 'text'
+      }
+    ],
+    consent_collection: {
+        terms_of_service: 'required',
+    },
+    //metadata: {
+    //  agreed_to_terms: agreed.toString()
+    //},
+    mode: 'payment',
+    return_url: `${process.env.FRONTEND_ORIGIN}/success`,
+    automatic_tax: {enabled: true},
+  });
+    console.log(`ええかんじやね`)
+  res.send({clientSecret: session.client_secret});
+});
+
 //athlete no after
 app.post('/api/auth/create-checkout-session1', async (req, res) => {
   const session = await stripe.checkout.sessions.create({

@@ -1468,7 +1468,7 @@
 }
 
 .newsimg {
-    width: 50%;
+    width: 25%;
     display: flex;
 }
 
@@ -1483,6 +1483,10 @@
     width: 75%;
     display: flex;
     flex-direction: column;
+}
+
+.newsinfo h3 {
+    object-fit: contain;
 }
 
 .newsinfodata {
