@@ -2,11 +2,18 @@
   <div>
     <h2>ショッピングカートプロト</h2>
     
-    <div v-for="item in cart" :key="item.priceId">
-      商品ID: {{ item.name }} | 数量: {{ item.quantity }}
-      <img :src="item.imageUrl" :alt="item.name"/>
-      <button @click="addToCart(item.priceId,item.name,item.imageUrl, 1)">+</button>
-    <button @click="decreaseQuantity(item.priceId,1)">-</button>
+    <div class="newsitem" v-for="item in cart" :key="item.priceId">
+      <div class="newsimg">
+        <img :src="item.imageUrl" :alt="item.name"/>
+      </div>
+      <div class="newsinfo">
+         商品ID: {{ item.name }} | 数量: {{ item.quantity }}
+         <button @click="addToCart(item.priceId,item.name,item.imageUrl, 1)">+</button>
+         <button @click="decreaseQuantity(item.priceId,1)">-</button>
+      </div>
+     
+      
+    
 
     </div>
 

@@ -9,8 +9,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/image',
     '@nuxt/content',
-    '@sidebase/nuxt-auth',
-    '@vercel/analytics'
+    '@sidebase/nuxt-auth'
   ],
   runtimeConfig: {
     stripeSecret: process.env.STRIPE_SECRET_KEY,
