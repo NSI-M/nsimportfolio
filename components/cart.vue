@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>ショッピングカート</h2>
+    <h2>ショッピングカートプロト</h2>
     
     <div v-for="item in cart" :key="item.priceId">
       商品ID: {{ item.name }} | 数量: {{ item.quantity }}
