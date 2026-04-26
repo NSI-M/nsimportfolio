@@ -19,6 +19,8 @@
 
     <button @click="addToCart('price_1TBHfD09dtrC0gbUvzv2Wh7i', 'お魚', '/img/thumbdef.png', 1)">商品を追加</button>
     <button @click="addToCart('price_1Rvj0I09dtrC0gbUikNONw4w','焼肉', '', 1)">商品を追加</button>
+        <button @click="addToCart('price_1TNyp109dtrC0gbUrpwN0Rud','やきそば', '', 1)">商品を追加</button>
+
     <!--<button @click="addToCart('price_XXXXXX', 1)">商品を追加</button>-->
 
     <button @click="handleCheckout" :disabled="cart.length === 0">
