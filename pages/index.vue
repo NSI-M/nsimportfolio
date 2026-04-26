@@ -63,8 +63,8 @@
             </div>
         </div>
 
-
-    <newslist/>
+    <itemlist/>
+    
     </div>
     <footertop/>
     

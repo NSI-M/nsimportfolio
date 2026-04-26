@@ -5,7 +5,6 @@
     <NuxtWelcome />
     -->
   <NuxtPage />
-  <Analytics/>
   
 </template>
 <script setup>
