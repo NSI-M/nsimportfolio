@@ -24,11 +24,11 @@
           <div class="swiper mySwiper">
             <div class="swiper-wrapper">
               <NuxtLink to="/collections/26pf" class="swiper-slide">
-                <img src="/img/thumbdef.png" alt="AW 26">
+                <img src="/img/2026fw.jpg" alt="AW 26">
                 <div class="slide-caption">Autumn Winter 2026</div>
               </NuxtLink>
-              <NuxtLink to="/collections/25aw" class="swiper-slide">
-                <img src="/img/suzuki/1.jpg" alt="SS 25">
+              <NuxtLink to="/collections/25ss" class="swiper-slide">
+                <img src="/img/2025ss.JPEG" alt="SS 25">
                 <div class="slide-caption">Spring Summer 2025</div>
               </NuxtLink>
               <NuxtLink to="/collections/25ss" class="swiper-slide">

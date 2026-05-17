@@ -86,6 +86,33 @@ startServer()
 // サインアップ
 const saltRounds = 10;
 
+app.get('/api/stock/:priceId', async (req, res) => {
+  try {
+    const { priceId } = req.params;
+    
+    // デバッグ用：どんな値で検索しようとしているか確認
+    console.log('検索キー(priceId):', priceId);
+
+    // カラム名を 'priceid' から 'price' に修正
+    const item = await sql`SELECT stock FROM items WHERE priceid = ${priceId}`;
+
+    if (!item) {
+      console.log('DBに該当商品がありませんでした。priceId:', priceId);
+      return res.status(404).json({ error: '商品が見つかりません' });
+    }
+
+    console.log('取得成功！在庫数:', item);
+    const result = Array.isArray(item) ? item[0] : item;
+
+    console.log('送信するデータ:', { stock: result.stock }); 
+    res.json({ stock: result.stock }); // これでフロントには { "stock": 0 } が届く
+  } catch (error) {
+    // 実際のSQLエラーの内容をログに出すと原因がすぐわかります
+    console.error('SQL実行エラー:', error);
+    res.status(500).json({ error: '在庫の取得に失敗しました' });
+  }
+});
+
 // サインアップ (ユーザー登録)
 app.post('/api/auth/signup', async (req, res) => {
   console.log('--- POST /api/auth/signup ---');
@@ -157,29 +184,91 @@ app.post('/api/auth/signin', async (req, res) => {
 });
 
 // 認証済みユーザー情報取得
-app.get('/api/auth/member', (req, res) => {
+//app.get('/api/auth/member', (req, res) => {
+//  try {
+//    const authHeader = req.headers.authorization;
+//
+//    // Authorizationヘッダーがない、または形式が正しくない場合
+//    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+//      return res.status(401).json({ message: '認証トークンが必要です。' });
+//    }
+//
+//    // 'Bearer 'の部分を取り除き、トークンのみを抽出
+//    const token = authHeader.split(' ')[1];
+//
+//    // トークンを検証。無効な場合はエラーが投げられ、catchブロックで処理される
+//    const payload = jwt.verify(token, process.env.JWT_SECRET);
+//
+//    // 検証成功後、ペイロードを返す
+//    res.json({ member: payload });
+//
+//  } catch (err) {
+//    // jwt.verifyが失敗した場合 (期限切れ、改ざんなど)
+//    res.status(403).json({ error: '認証トークンが無効です。' });
+//  }
+//});
+
+// 認証済みユーザー情報取得20260502
+app.get('/api/auth/member', async (req, res) => { // ★ async を追加
   try {
     const authHeader = req.headers.authorization;
 
-    // Authorizationヘッダーがない、または形式が正しくない場合
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
       return res.status(401).json({ message: '認証トークンが必要です。' });
     }
 
-    // 'Bearer 'の部分を取り除き、トークンのみを抽出
     const token = authHeader.split(' ')[1];
-
-    // トークンを検証。無効な場合はエラーが投げられ、catchブロックで処理される
     const payload = jwt.verify(token, process.env.JWT_SECRET);
 
-    // 検証成功後、ペイロードを返す
-    res.json({ member: payload });
+    // ★ JWTに保存されているユーザーIDを使って、DBから最新の情報を取得
+    // ※ usersテーブルに fname, lname カラムが存在している前提です
+    const users = await sql`SELECT id, email, fname, lname, status FROM users WHERE id = ${payload.id}`;
+
+    if (users.length === 0) {
+      return res.status(404).json({ message: 'ユーザーが見つかりません。' });
+    }
+
+    const user = users[0];
+
+    // 検証成功後、DBから取得した情報を返す
+    res.json({ member: user });
 
   } catch (err) {
-    // jwt.verifyが失敗した場合 (期限切れ、改ざんなど)
     res.status(403).json({ error: '認証トークンが無効です。' });
   }
 });
+
+// 名前の変更 (新規追加)
+app.put('/api/auth/customer', async (req, res) => {
+  try {
+    const authHeader = req.headers.authorization;
+    if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      return res.status(401).json({ message: '認証トークンが必要です。' });
+    }
+
+    const token = authHeader.split(' ')[1];
+    const payload = jwt.verify(token, process.env.JWT_SECRET);
+
+    // フロントエンドから送られてきた新しい名前を取得
+    const { fname, lname } = req.body;
+
+    if (!fname || !lname) {
+      return res.status(400).json({ error: '姓と名は両方入力してください。' });
+    }
+
+    // JWTのIDを使ってデータベースを更新
+    await sql`UPDATE users SET fname = ${fname}, lname = ${lname} WHERE id = ${payload.id}`;
+
+    res.json({ message: '名前を更新しました。' });
+
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ error: 'サーバーエラーが発生しました。' });
+  }
+});
+
+
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`)
 });
@@ -225,6 +314,10 @@ app.post('/api/auth/create-checkout', async (req, res) => {
   'VC', 'VE', 'VG', 'VN', 'VU', 'WF', 'WS', 'XK', 'YE', 'YT', 'ZA', 'ZM', 'ZW', 'ZZ'], 
         // ※「全世界」を指定する場合、Stripeがサポートする全ISO国コードを列挙する必要があります
       },
+      tax_id_collection: {
+        enabled: true,
+        required: 'if_supported',
+      },
       phone_number_collection: {
         enabled: true, // 電話番号入力を有効化
       },
@@ -246,7 +339,7 @@ app.post('/api/auth/create-checkout', async (req, res) => {
       automatic_tax: { enabled: true },
     });
     
-    console.log(`ええかんじや`);
+    console.log(`OK`);
     res.send({ clientSecret: session.client_secret });
 
   } catch (error) {

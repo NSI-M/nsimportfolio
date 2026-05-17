@@ -63,16 +63,16 @@ export default defineNuxtConfig({
   devtools: { enabled: true } ,
   app: {
     head: {
-      title: "Japan Runway Show | 日本のファッションウィーク",
+      title: "EMMM oe | イニミニマニモ",
       meta: [
         {charset: "utf-8"},
         {name:"viewport", content:"width=device-width, initial-scale=1"},
         {name:"referrer", content:"no-referrer-when-downgrade"},
         {name:"author", content:"MIYU ISHITSUBO"},
         {name:"copyright", content:"MIYU ISHITSUBO"},
-        {name:"description", content:"Japan Runway Show(ジャパンランウェイショー)公式サイトです。日本に新設のファッションウィークを設立し、芸術とファッションの振興を目指します。"},
+        {name:"description", content:"EMMM oe(イニミニマニモ)公式サイトです"},
         {name:"robots", content:"index, follow, max-image-preview:large"},
-        {property:"og:title", content:"Japan Runway Show"},
+        {property:"og:title", content:"EMMM oe | イニミニマニモ"},
         {property:"og:description", content:"Japan Runway Show(ジャパンランウェイショー)公式サイトです。日本に新設のファッションウィークを設立し、芸術とファッションの振興を目指します。"},
         {property:"og:url", content:"https://www.jrs.kiel-mj.com/"},
         {property:"og:image", content:"/img/thumbb.png"},

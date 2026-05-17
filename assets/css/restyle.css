@@ -128,7 +128,16 @@
             /* 上に50%移動して垂直中央に配置 */
         }
 
+.global-loading {
+    width: 100%;
+    z-index: 999;
+}
 
+.global-loading img {
+    width: 100%;
+    object-fit: cover;
+    margin: 0 auto;
+}
 
 
 .hidden {
@@ -170,7 +179,7 @@
 
 .logocontainer {
     position: relative;
-    width: 50%;
+    width: 10%;
     display: flex;
 }
 
@@ -233,10 +242,43 @@
     }
 }
 
+    /* 必要に応じてスタイルを調整してください */
+.search-container {
+  width: 60%;
+  margin-left: 9%;
+  display: flex;
+}
+.search-input {
+  width: 100%;
+  margin: 0 auto;
+  font-size: 1rem;
+  text-align: center;
+  align-items: center;
+}
+.search-results {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+  z-index: 9;
+  display: flex;
+  position: relative;
+}
+.searchresultslist {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 0.5rem;
+  width: 100/3%;
+}
+
+.search-result-thumb {
+    width: 100%;
+    object-fit: contain;
+}
+
 .headerlist {
-    width: 20%;
+    width: 10%;
     position: relative;
-    margin-left: 27%;
+    margin-left: 9%;
     padding-right: 1%;
     padding-top: 0;
     display: flex;
@@ -430,21 +472,55 @@
     z-index: -1;
 }
 
+.evisual {
+    display: flex;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    z-index: -1;
+}
+
 .visual p {
     position: absolute;
     right: 2%;
+}
+.evisual p {
+    position: absolute;
+    left: 30%;
 }
 
 @media screen and (max-width: 1024px) {
     .visual p {
         bottom: 0%;
     }
+
+    .evisual {
+        height: 150vw;
+    }
+
+    .evisual video {
+        max-width: 100%;
+        object-fit: cover;
+    }
+    .evisual p {
+        bottom: 0%;
+        text-align: center;
+    }
+
 }
 
 @media screen and (min-width: 1025px) {
     .visual p {
         bottom: 20%;
     }
+    .evisual p {
+        bottom: 20%;
+    }
+    .evisual video {
+        max-width: 100%;
+        object-fit: contain;
+    }
+    
 }
 
 .visual2 p {
@@ -1318,12 +1394,31 @@
     z-index: 3;
     background-color: rgba(0, 0, 0, 0);
 }
+.eflexbox {
+    display: flex;
+    position: relative;
+    height: auto;
+    width: 100%;
+    flex-wrap: wrap;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-bottom: 1vw;
+    margin-top: 56.25vw;
+    box-sizing: border-box;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0);
+}
 
 @media (min-width: 1024px) {
     .pflexbox {
         margin-top: 25vw;
     }
     
+}
+@media (max-width: 1024px) {
+    .eflexbox {
+        margin-top: 150vw;
+    }
 }
 
 .pflexbox h2 {
@@ -2704,3 +2799,4 @@ form {
         height: 100vh; /* 縦スワイプのために高さを画面いっぱいに */
       }
     }
+

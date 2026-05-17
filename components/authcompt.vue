@@ -15,6 +15,6 @@ return Array.isArray(raw) ? raw[0] :(raw || '') })
   <slot v-if="member" />
   <div class="flexbox" v-else>
     <h2>ようこそ{{ name }}様</h2>
-        <p>Japan Runway Show vol.3では、japanrunwayshow@gmail.comよりお送りしたQRコードを受付にて拝見いたします。<br>QRコードをスクリーンショットなどで保存し、当日お忘れなきようお持ちください。</p>
+        <p>NSIMイベントでは、reception@nsim.comよりお送りしたQRコードを受付にて拝見いたします。<br>QRコードをスクリーンショットなどで保存し、当日お忘れなきようお持ちください。</p>
   </div>
 </template>

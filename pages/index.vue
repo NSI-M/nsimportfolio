@@ -2,7 +2,7 @@
     
     <headertop/>
     <topvideo/>
-    <div class="pflexbox">
+    <div class="eflexbox">
         <h2>
             <span style="font-family: 'Orbitron';">Japan Runway Show</span>とは
         </h2>

@@ -1,8 +1,8 @@
 <template>
-    <NuxtLink  to="/collections/" target="_self" external class="visual">
-        <video poster="@/assets/img/jrstop.jpg" src="@/assets/img/volata16.mp4" autoplay loop muted="muted" playsinline controlslist="nodownload" oncontextmenu="return false;">
+    <NuxtLink  to="/collections/" target="_self" external class="evisual">
+        <video poster="" src="@/assets/img/topvideo.mp4" autoplay loop muted="muted" playsinline controlslist="nodownload" oncontextmenu="return false;">
         </video>
-        <p>私たちのコレクションを見る</p>
+        <button class="buybutton" @click="link">チケットを見る</button> 
     </NuxtLink>
 
 </template>

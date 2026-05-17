@@ -4,7 +4,10 @@
     <NuxtRouteAnnouncer />
     <NuxtWelcome />
     -->
+    
+  <LoadingScreen/>
   <NuxtPage />
+
   
 </template>
 <script setup>
