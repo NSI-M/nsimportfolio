@@ -13,7 +13,7 @@
             </div>
         </Authcompt>
         <div class="flexcontainer">
-            <img style="width: 100%;" src="@/assets/img/jrsprefall26.jpg" alt=""></img>
+            <img style="width: 100%;" src="@/assets/img/kari.png" alt=""></img>
         </div>
     <footern/>
 </template>

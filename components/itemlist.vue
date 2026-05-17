@@ -16,7 +16,7 @@ const { data: posts } = await useAsyncData('items', () => {
     <h2><span style="font-family: 'Orbitron';">NEW ARRIVAL</span></h2>
   </div>
   
-          <NuxtLink :to="post.path" v-for="post in posts" :key="`items-${post.id}`" class="newsitem">
+          <NuxtLink :to="post.path" external v-for="post in posts" :key="`items-${post.id}`" class="newsitem">
               <div class="newsimg">
                 <img
                   v-if="post.image"

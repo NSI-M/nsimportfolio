@@ -43,6 +43,12 @@ export const useCart = () => {
     localStorage.setItem(TIMESTAMP_KEY, Date.now().toString())
   }, { deep: true })
 
+  // 2.1 カートの数量を観察
+  const getItemQuantity = (priceId: string) => {
+    const item = cart.value.find(i => i.priceId === priceId)
+    return item ? item.quantity : 0
+  }
+
   // 3. 商品を追加（引数にnameとimageUrlを追加）
   const addToCart = (priceId: string, name: string, imageUrl: string, quantity: number = 1) => {
     const existingItem = cart.value.find(item => item.priceId === priceId)
@@ -81,6 +87,7 @@ export const useCart = () => {
 
   return {
     cart,
+    getItemQuantity,
     addToCart,
     decreaseQuantity,
     removeItem,
