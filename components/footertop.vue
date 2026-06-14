@@ -12,16 +12,16 @@ import { NuxtLink } from '#components';
                             <div class="footercontainer">
                                 <div class="footerinfo">
                                     <div class="footerlogo">
-                                        <a href="https://www.jrs.kiel-mj.com/">
+                                        <a href="https://www.emmm-oe.com/">
                                             <span class="footerlogocontainer footerimg">
                                                 <picture class="footerlogocontainer">
-                                                    <img alt="Japan Runway Show" class="ResponsiveImageContainer" src="@/assets/img/logo.png">
+                                                    <img alt="EMMM oe" class="ResponsiveImageContainer" src="@/assets/img/logo.png">
                                                 </picture>
                                             </span>
                                         </a>
                                     </div>
                                     <div class="footerspace">
-                                        <div class="footerholder"><h1 style="font-family: 'Orbitron';">Japan Runway Show</h1></div>
+                                        <div class="footerholder"><h1 style="font-family: 'adobe-caslon-pro';">EMMM oe</h1></div>
                                     </div>
                                     <div class="footersnslist">
                                         <ul class="snslist">
@@ -53,10 +53,10 @@ import { NuxtLink } from '#components';
                                         <div class="bGyhgQ">
                                             <ul class="NavigationListWrapper-gWXLVS hSzfcS">
                                                 <li class="NavigationListItemWrapper-cxLZKD dsgTQs">
-                                                    <a class="NavigationInternalLink-cWEaeo" href="https://www.kiel-mj.com/company/">会社情報</a>
+                                                    <a class="NavigationInternalLink-cWEaeo" href="https://www.emmm-oe.com/company/">会社情報</a>
                                                 </li>
                                                 <li class="NavigationListItemWrapper-cxLZKD dsgTQs">
-                                                    <a class="NavigationInternalLink-cWEaeo" href="https://www.kiel-mj.com/contact/">お問い合わせ</a>
+                                                    <a class="NavigationInternalLink-cWEaeo" href="https://www.emmm-oe.com/contact/">お問い合わせ</a>
                                                 </li>
                                                 <li class="NavigationListItemWrapper-cxLZKD dsgTQs">
                                                     <NuxtLink class="NavigationInternalLink-cWEaeo" to="/laws">特定商取引法に基づく表記</NuxtLink>

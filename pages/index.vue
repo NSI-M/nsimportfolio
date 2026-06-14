@@ -4,7 +4,7 @@
     <topvideo/>
     <div class="eflexbox">
         <h2>
-            <span style="font-family: 'Orbitron';">Japan Runway Show</span>とは
+            <span style="font-family: 'adobe-caslon-pro';">EMMM oe</span>とは
         </h2>
         <cart/>
         <p>生成AI,SNSが飽和する時代に、生身の人間が纏う表皮としてのファッションを再考する。
