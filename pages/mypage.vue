@@ -77,11 +77,8 @@ const handleSignout = () => {
   <div class="mypage-container">
     <h1>マイページ</h1>
 
-    <div v-if="isLoading">
-      <p>読み込み中...</p>
-    </div>
 
-    <div v-else-if="user">
+    <div v-if="user">
       <!-- ★ user.status が 2 以上の時だけ表示される -->
       <h2 v-if="user.status >= 2" class="welcome-message">
         ようこそ！

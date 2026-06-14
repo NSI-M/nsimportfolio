@@ -90,6 +90,7 @@ export default defineNuxtConfig({
         {rel: "icon", type:"image/x-icon", href:"/public/favicon.ico"},
         {rel:"stylesheet", href:"https://www.kiel-mj.com/css/Kiel Top.css"},
         {rel:"stylesheet", href:"https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"},
+        {rel:"stylesheet", href:"https://use.typekit.net/tnd5ozq.css"},
         {rel:"stylesheet", href:"https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"},
         {rel:"canonical", href:"https://www.jrs.kiel-mj.com/"},
         {rel:"shortcut icon", href:"/faviconl.ico"}
