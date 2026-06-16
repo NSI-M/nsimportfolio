@@ -147,7 +147,7 @@
 .kielbody {
     position: relative;
     margin: 0;
-    background-color: rgba(38, 30, 71, 1);
+    background-color: rgba(139, 129, 195, 1);
     padding: 0;
     width: 100vw;
     box-sizing: border-box;
@@ -206,7 +206,6 @@
     max-height: 100%;
     margin: 0;
     color: rgba(255, 255, 255, 1);
-    font-family: "Arial", "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
 }
 
 @media screen and (max-width:1024px) {
@@ -228,8 +227,7 @@
 @media screen and (max-width:1024px) {
     .headertitle h2 {
         margin: 0;
-        line-height: 100%;
-        font-size: 2rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -237,8 +235,7 @@
 @media screen and (min-width:1025px) {
     .headertitle h2 {
         margin: 0;
-        line-height: 100%;
-        font-size: 2.5rem;
+        font-size: 2rem;
     }
 }
 
@@ -606,6 +603,12 @@
 
 }
 
+.carouseln {
+    width: 100%;
+    margin-top: 0%;
+    position: relative;
+}
+
 @media (max-width: 767px) {
     .carousel {
         width: 80%;
@@ -623,18 +626,19 @@
 .carousel-item img {
     width: 100%;
     height: auto;
-    aspect-ratio: 4 / 3;
+    object-fit: contain;
+    aspect-ratio: 16 / 9;
 }
 
 .carousel-control-prev,
 .carousel-control-next {
-    background-color: rgba(128, 128, 128, 0.2);
+    background-color: rgba(128, 128, 128, 0);
     /* グレーの半透明 */
 }
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: rgba(109, 5, 30, 0.2);
+    background-color: rgba(109, 5, 30, 0);
     /* 矢印の色 */
     border-radius: 50%;
 }

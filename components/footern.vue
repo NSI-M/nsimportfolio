@@ -7,21 +7,21 @@
                             <div class="footercontainer">
                                 <div class="footerinfo">
                                     <div class="footerlogo">
-                                        <a href="https://www.jrs.kiel-mj.com/">
+                                        <a href="https://www.nsi-m.xyz/">
                                             <span class="footerlogocontainer footerimg">
                                                 <picture class="footerlogocontainer">
-                                                    <img alt="Japan Runway Show" class="ResponsiveImageContainer" src="@/assets/img/logo.png">
+                                                    <img alt="NSIM" class="ResponsiveImageContainer" src="@/assets/img/logob.png">
                                                 </picture>
                                             </span>
                                         </a>
                                     </div>
                                     <div class="footerspace">
-                                        <div class="footerholder"><h2 style="font-family: 'Orbitron';">Japan Runway Show</h2></div>
+                                        <div class="footerholder"><h2 style="font-family: 'adobe-caslon-pro';">NSIM</h2></div>
                                     </div>
                                     <div class="footersnslist">
                                         <ul class="snslist">
                                             <li class="snsicon">
-                                                <a class="snsnlink SocialIconExternalLink-huuzOU" href="https://www.instagram.com/kiel_management_japan/" >
+                                                <a class="snsnlink SocialIconExternalLink-huuzOU" href="https://www.instagram.com/miyu_the.dol/" >
                                                     <div class="iconcontainer">
                                                         <svg class="iconsvg icon"focusable="false" viewBox="0 0 32 32" width="32" height="32" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                             <title>Instagram</title>
@@ -48,10 +48,10 @@
                                         <div class="bGyhgQ">
                                             <ul class="NavigationListWrapper-gWXLVS hSzfcS">
                                                 <li class="NavigationListItemWrapper-cxLZKD dsgTQs">
-                                                    <a class="NavigationInternalLink-cWEaeo" href="https://www.kiel-mj.com/company/">会社情報</a>
+                                                    <a class="NavigationInternalLink-cWEaeo" href="https://www.nsi-m.xyz/company/">会社情報</a>
                                                 </li>
                                                 <li class="NavigationListItemWrapper-cxLZKD dsgTQs">
-                                                    <a class="NavigationInternalLink-cWEaeo" href="https://www.kiel-mj.com/contact/">お問い合わせ</a>
+                                                    <a class="NavigationInternalLink-cWEaeo" href="https://www.nsi-m.xyz/contact/">お問い合わせ</a>
                                                 </li>
                                                 <li class="NavigationListItemWrapper-cxLZKD dsgTQs">
                                                     <NuxtLink class="NavigationInternalLink-cWEaeo" to="/laws">特定商取引法に基づく表記</NuxtLink>
