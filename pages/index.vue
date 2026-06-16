@@ -1,69 +1,12 @@
 <template>
     
     <headertop/>
-    <topvideo/>
-    <div class="eflexbox">
-        <h2>
-            <span style="font-family: 'adobe-caslon-pro';">EMMM oe</span>とは
-        </h2>
-        <cart/>
-        <p>生成AI,SNSが飽和する時代に、生身の人間が纏う表皮としてのファッションを再考する。
-            
-            アーバンギャルドな視点のみならず、地方・伝統芸術文化にも焦点を当て、日本のファッションシーンのさらなる興隆を。
-        </p>
-        <h2>
-            <span style="font-family: 'Orbitron';">Our Next Schedule</span>
-        </h2>
-        <callender/>
-        <button class="buybutton" @click="link">チケットを見る</button> 
+    <diarytop/>
+    <div class="flexbox">
+        <works/>
         <div class="flexcontainer">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item">
-                        <a href="" target="_self">
-                            <img src="@/assets/img/DSC08825.jpg" class="d-block w-100" alt="Japan Runway Show">
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="" target="_self">
-                            <img src="@/assets/img/26aw.jpg" class="d-block w-100" alt="Japan Runway Show">
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="" target="_self">
-                            <img src="@/assets/img/25fwc.jpg" class="d-block w-100" alt="Japan Runway Show">
-                        </a>
-                    </div>
-                    <div class="carousel-item active">
-                        <a href="" target="_self" >
-                            <img src="@/assets/img/01.jpg" class="d-block w-100" alt="Japan Runway Show">
-                        </a>
-                    </div>
-                    <div class="carousel-item">
-                        <a href="" target="_self" >
-                            <img src="@/assets/img/56-DSC03200.jpg" class="d-block w-100" alt="Japan Runway Show">
-                        </a>
-                    </div>
-                </div>
-                <ol class="carousel-indicators">
-                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
-                    <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                </ol>
-                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="sr-only"></span>
-                </a>
-                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="sr-only"></span>
-                </a>
-            </div>
         </div>
 
-    <itemlist/>
     
     </div>
     <footertop/>
@@ -72,27 +15,14 @@
 
 <script setup>
 import { onMounted } from 'vue'
-onMounted(() => {
-    const image = document.querySelector('.carousel');
-    const originalFilter = image.style.filter; // 初期状態のフィルターを保存
-    window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset;
-    const opacity = 1.2 - 1.5* scrollTop / window.innerHeight; // スクロール量に応じて1.2～0の値を計算
-
-            // グレースケールフィルターの透明度を調整
-    image.style.filter = `grayscale(${opacity})`;
-    });
-})
 import { navigateTo } from '#app'
+import { NuxtLink } from '#components';
 
-function link() {
-  navigateTo('/tickets/') // 任意の内部リンクへ遷移
-}
 useHead({
-  title: 'Japan Runway Show | 日本のファッションウィーク',
+  title: 'NSIM',
   meta: [
-    {name: 'description', content: 'Japan Runway Show(ジャパンランウェイショー)公式サイトです。日本に新設のファッションウィークを設立し、芸術とファッションの振興を目指します。'},
-    {property: 'og:title', content: 'Japan Runway Show'},
+    {name: 'description', content: 'NSIM directs branding, designing, engineering and everyday'},
+    {property: 'og:title', content: 'NSIM'},
     {name:"robots", content:"index, follow, max-image-preview:large"}
  ]
 })
