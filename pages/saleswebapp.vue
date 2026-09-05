@@ -1,0 +1,49 @@
+<template>
+    <Headertop/>
+     <div class="flexbox">
+        <h2 style="font-family: 'adobe-caslon-pro';">セールスウェブアップ</h2>
+        <p>セールスウェブアップとは、NSIMが制作したクラウドベースのウェブアプリケーションです。本ウェブアプリケーションでは、銀行振込を含んだオンライン決済や、商品在庫管理、顧客管理、受注請求書管理など、BtoBおよびBtoCでの販売を支援いたします。</p>
+        <ul>
+            使用マスタ
+            <li>
+                商品マスタ
+            </li>
+            <li>
+                顧客マスタ
+            </li>
+        </ul>
+        <ul>
+            搭載機能
+            <li>
+                決済機能
+            </li>
+            <li>
+                商品管理機能
+            </li>
+            <li>
+                請求書発行機能
+            </li>
+            <li>
+                顧客管理機能
+            </li>
+            <li>
+                注文/受注管理機能
+            </li>
+            <li>
+                在庫管理機能
+            </li>
+            <li>
+                顧客認証機能
+            </li>
+            <li>
+                顧客入場管理機能
+            </li>
+        </ul>
+        <div>
+            
+        </div>
+        <p>メーカー希望価格:￥1,870,000(税込)</p>
+        <p>導入に関するお問い合わせは<a style="text-decoration: underline;" href="mailto:info.miyumodel@gmail.com">こちら</a>(メール画面が起動します)</p>
+     </div>
+    <footern/>
+</template>
