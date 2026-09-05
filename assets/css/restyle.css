@@ -151,14 +151,14 @@
     padding: 0;
     width: 100vw;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: 'adobe-caslon-pro';
 }
 
 .kielheader {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: rgba(28, 28, 28, 0.1);
+    background-color: rgba(28, 28, 28, 0);
     z-index: 9;
     padding: 1rem;
     display: flex;
@@ -1465,6 +1465,30 @@
     margin-right: 5%;
 }
 
+.flexbox ul {
+    margin-left: 5%;
+    margin-right: 5%;
+    list-style: none;
+    font-size: 1rem;
+    width: 40%;
+}
+
+.flexbox ul li {
+    position: relative;
+    padding-left: 1rem; 
+    background-image: url('/img/logob.png');
+    background-repeat: no-repeat;
+    background-position: left center; 
+    background-size: 1rem;
+    font-size: 1rem;      
+}
+
+.flexbox h6 {
+    width: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
 @media (max-width: 767px) {
     .flexbox p {
         font: 1em sans-serif;
@@ -1472,6 +1496,18 @@
         padding-left: 5%;
         margin-right: 5%;
 
+    }
+
+    .flexbox img {
+        max-width: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+    
+    .flexbox h6 {
+        text-align: right;
     }
     }
     
@@ -1483,6 +1519,13 @@
     padding-left: 5%;
     margin-right: 5%;
 }
+
+.flexbox img {
+    max-width: 100%;
+    padding-left: 5%;
+    object-fit: contain;
+}
+
 }
 
 .normallist {

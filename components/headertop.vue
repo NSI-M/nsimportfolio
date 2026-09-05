@@ -17,10 +17,10 @@
                             </svg>
                         </button>
                         <ul class="menu" id="menu">
-                        <li class="menulists"><NuxtLink to="/diary/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'Orbitron';">DIARY</NuxtLink></li>
-                        <li class="menulists"><NuxtLink to="/works/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'Orbitron';">WORKS</NuxtLink></li>
-                        <li class="menulists"><NuxtLink to="/study/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'Orbitron';">STUDY</NuxtLink></li>
-                        <li class="menulists"><NuxtLink to="/contact/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'Orbitron';">CONTACT</NuxtLink></li>
+                        <li class="menulists"><NuxtLink to="/diary/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'adobe-caslon-pro';">DIARY</NuxtLink></li>
+                        <li class="menulists"><NuxtLink to="/works/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'adobe-caslon-pro';">WORKS</NuxtLink></li>
+                        <li class="menulists"><NuxtLink to="/study/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'adobe-caslon-pro';">STUDY</NuxtLink></li>
+                        <li class="menulists"><NuxtLink to="/contact/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'adobe-caslon-pro';">CONTACT</NuxtLink></li>
                         </ul>
                     </div>
                 </Authcomp>
@@ -32,10 +32,10 @@
                         </svg>
                     </button>
                     <ul class="menu" id="menu">
-                        <li class="menulists"><NuxtLink to="/diary/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'Orbitron';">DIARY</NuxtLink></li>
-                        <li class="menulists"><NuxtLink to="/works/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'Orbitron';">WORKS</NuxtLink></li>
-                        <li class="menulists"><NuxtLink to="/study/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'Orbitron';">STUDY</NuxtLink></li>
-                        <li class="menulists"><NuxtLink to="/contact/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'Orbitron';">CONTACT</NuxtLink></li>
+                        <li class="menulists"><NuxtLink to="/diary/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'adobe-caslon-pro';">DIARY</NuxtLink></li>
+                        <li class="menulists"><NuxtLink to="/works/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'adobe-caslon-pro';">WORKS</NuxtLink></li>
+                        <li class="menulists"><NuxtLink to="/study/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'adobe-caslon-pro';">STUDY</NuxtLink></li>
+                        <li class="menulists"><NuxtLink to="/contact/" style="color: rgba(255, 255, 255, 1); text-decoration: none; font-family: 'adobe-caslon-pro';">CONTACT</NuxtLink></li>
                     </ul>
                 </div>    
             </div>
